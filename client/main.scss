@@ -1,0 +1,247 @@
+/* CSS declarations go here */
+@import '{zurb:foundation-sites}/scss/foundation';
+
+@include foundation-everything;
+
+body {
+  font-family: sans-serif;
+  background-color: #9c9c9c;
+  //background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+.contenedor {
+  background-color: #DCD0FF;
+}
+
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+
+}
+
+header {
+  background: #7580ac;
+  background-image: linear-gradient(to bottom, #7580ac, #DCD0FF 100%);
+
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+#login-buttons {
+  display: block;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+form {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+
+.new-task input:focus{
+  outline: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+
+}
+
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+}
+
+li .text {
+  margin-left: 10px;
+}
+
+li.checked {
+  color: #888;
+}
+
+li.checked .text {
+  text-decoration: line-through;
+}
+
+li.private {
+  background: #eee;
+  border-color: #ddd;
+}
+
+header .hide-completed {
+  float: right;
+}
+
+.toggle-private {
+  margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+  li {
+    padding: 12px 15px;
+  }
+
+  .search {
+    width: 150px;
+    clear: both;
+  }
+
+  .new-task input {
+    padding-bottom: 5px;
+  }
+}
+
+.cantidad {
+  width: 100px;
+     height: 100px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #5cb85c;
+}
+
+.todos, .super, .fruteria, .panaderia, .congelados, .otros, .crear {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    //transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+
+    border-bottom: #7580ac;
+    border-right: #7580ac;
+
+}
+
+.todos {
+  background-color: #9c9c9c;
+}
+
+.super {
+  background-color: #ED2929;
+}
+
+.fruteria {
+  background-color: #90EE90;
+}
+
+.panaderia {
+  background-color: #FBEC5D;
+}
+
+.congelados {
+  background-color: #87CEEB;
+}
+
+.otros {
+  background-color: #FFCC99;
+}
+
+.select, .cantidadInput, .producto {
+  margin:0 !important;
+}
+
+
+
+
+
+#Super {
+  background: #ED2939;
+  background-image: linear-gradient(to right, #ED2939, #DCD0FF 100%);
+}
+#Fruteria {
+  background: #90EE90;
+  background-image: linear-gradient(to right, #90EE90, #DCD0FF 100%);
+
+}
+#Congelados {
+  background: #87CEEB;
+  background-image: linear-gradient(to right, #87CEEB, #DCD0FF 100%);
+
+}
+#Panaderia {
+  background: #FBEC5D;
+  background-image: linear-gradient(to right, #FBEC5D, #DCD0FF 100%);
+
+}
+#Otros {
+  background: #FFCC99;
+  background-image: linear-gradient(to right, #FFCC99, #DCD0FF 100%);
+}
+
+.checked {
+  background: #C9C0BB !important;
+  background-image: linear-gradient(to right, #C9C0BB, #DCD0FF 100%) !important;
+}
+
+.usrName {
+  margin-right: 1rem;
+}
+
+.productoText {
+  margin-right: 3rem;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.tipoText {
+
+  margin-right: auto;
+}
+
+.addOrDelet {
+  margin-right:  3em;
+  float: right;
+}

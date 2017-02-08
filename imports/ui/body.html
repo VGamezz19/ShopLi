@@ -1,0 +1,133 @@
+<body>
+  <div class="row">
+    <div class="columns small-12 large-10 medium-10 large-offset-1 medium-offset-1 contenedor" >
+      <header class = "row">
+        <div class="columns small-12 medium-12 large-12">
+          <div class="row">
+            <div class="columns small-12 mediu-12 large-12 text-center">
+              <h1>Lista de la compra</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="columns small-4 small-offset-0 medium-4 medium-offset-0 larg-4 large-offset-0">
+              {{> loginButtons}}
+            </div>
+          </div>
+        </div>
+      </header>
+      {{> sAlert}}
+      {{#if currentUser}} <!-- si el usuario esta conectado-->
+        <form class="new-list">
+          <div class="row">
+            <div class="columns small-10 small-offset-1 medium-10 large-10 medium-offset-1 large-offset-1">
+              <div class="input-group">
+                <input type="text" name="producto" placeholder="Introduce producto" class ="producto"/>
+                <span class="input-group-label">text</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="columns small-10 small-offset-1 medium-10 large-10 medium-offset-1 large-offset-1">
+              <div class="input-group">
+                <input type = "number" name="cantidad" class ="cantidadInput" />
+                <span class="input-group-label">Kg/U</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="columns small-10 small-offset-1 medium-10 large-10 medium-offset-1 large-offset-1 ">
+              <div class="input-group">
+                <select name="tipo" class = "select">
+                  <option value="Super">Súper</option>
+                  <option value="Congelados">Congelados</option>
+                  <option value="Fruteria">Frutería</option>
+                  <option value="Panaderia">Panaderia</option>
+                  <option value="Otros">Otros</option>
+                </select>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="columns small-4 small-offset-4 medium-4 large-4 medium-offset-4 large-offset-4">
+              <input type="submit" value ="Crear" name="submit" class =" button crear" />
+            </div>
+          </div>
+        </form>
+      {{/if}}
+
+      <div class="row">
+        <div class="columns medium-4 large-4 hide-for-small-only ">
+            <label for="exampleFileUpload" class="todos">Todos {{incompleteCount}}</label>
+        </div>
+        <div class="columns medium-4 large-4  hide-for-small-only ">
+            <label for="exampleFileUpload" class="super">Súper {{countSuper}}</label>
+        </div>
+        <div class="columns medium-4 large-4  hide-for-small-only ">
+            <label for="exampleFileUpload" class="congelados">Congelados {{countCongelados}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns medium-4 large-4 hide-for-small-only ">
+            <label for="exampleFileUpload" class="fruteria">Frutería {{countFruteria}}</label>
+        </div>
+        <div class="columns medium-4 large-4  hide-for-small-only ">
+            <label for="exampleFileUpload" class="panaderia">Panaderia {{countPanaderia}}</label>
+        </div>
+        <div class="columns medium-4 large-4  hide-for-small-only ">
+            <label for="exampleFileUpload" class="otros">Otros {{countOtros}}</label>
+        </div>
+      </div>
+
+      <!--Para telefono-->
+      <div class="row">
+        <div class="columns small-6  show-for-small-only ">
+            <label for="exampleFileUpload" class="todos">Todos {{incompleteCount}}</label>
+        </div>
+        <div class="columns small-6  show-for-small-only ">
+            <label for="exampleFileUpload" class="super">Súper {{countSuper}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns small-6  show-for-small-only ">
+            <label for="exampleFileUpload" class="congelados">Congelados {{countCongelados}}</label>
+        </div>
+        <div class="columns small-6  show-for-small-only ">
+            <label for="exampleFileUpload" class="fruteria">Frutería {{countFruteria}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns small-6  show-for-small-only ">
+            <label for="exampleFileUpload" class="panaderia">Panaderia {{countPanaderia}}</label>
+        </div>
+        <div class="columns small-6  show-for-small-only ">
+            <label for="exampleFileUpload" class="otros">Otros {{countOtros}}</label>
+        </div>
+      </div>
+<!--Fin TELEFONO-->
+
+      <div class="row">
+        <div class="columns small-12 medium-12 large-12 text-center">
+          <label class="hide-completed">
+            <input type="checkbox" /> <span>Esconder compras realizadas</span>
+          </label>
+        </div>
+      </div>
+
+
+
+
+      <ul> <!--bucle -->
+        {{#each tasks}}
+          {{> task}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+
+</body>
+
+<!-- <template name="task">
+  <li>{{text}}</li>
+</template> -->

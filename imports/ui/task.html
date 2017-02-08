@@ -1,0 +1,34 @@
+<template name="task" >
+  <li class="{{#if checked}}
+                checked
+              {{/if}}"  id ="{{tipo}}" draggable="true">
+    <button class="delete">&times;</button>
+    {{#if currentUser}}<!--Si el usuario no esta conectado no muestra el inout-->
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    {{/if}}
+    <!--  {{#if isOwner}}
+        <button class="toggle-private">
+          {{#if private}}
+            Private
+          {{else}}
+            Public
+          {{/if}}
+        </button>
+      {{/if}} -->
+
+      <span class="usrName"><strong>{{username}}</strong></span>
+      <span class ="productoText">{{text}} </span>
+      <span class ="tipoText hide-for-small-only"> {{tipo}}</span>
+      <span class ="addOrDelet">
+          {{#if currentUser}}
+        <button class='toggle-delete fi-minus '></button>
+          {{/if}}
+          <span> {{number }} </span>
+            {{#if currentUser}}
+        <button class='toggle-add fi-plus'></button>
+            {{/if}}
+      </span>
+
+
+    </li>
+  </template>
