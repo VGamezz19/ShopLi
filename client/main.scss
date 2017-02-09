@@ -40,8 +40,8 @@
 
 body {
   font-family: sans-serif;
-  background-color: #9c9c9c;
-  //background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-image: url("https://image.jimcdn.com/app/cms/image/transf/dimension=origxorig:format=jpg/path/s7ffd8944362d0bf7/image/id48e7a1e20aae72e/version/1436428665/image.jpg");
+
   background-attachment: fixed;
 
   position: absolute;
@@ -68,20 +68,14 @@ body {
 
 }
 
-header {
-  background: #7580ac;
-  background-image: linear-gradient(to bottom, #7580ac, #DCD0FF 100%);
 
-  padding: 20px 15px 15px 15px;
-  position: relative;
-}
 
 #login-buttons {
   display: block;
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 2.5em;
   margin: 0;
   margin-bottom: 10px;
   display: inline-block;
@@ -279,4 +273,79 @@ header .hide-completed {
 .addOrDelet {
   margin-right:  3em;
   float: right;
+}
+.header-init {
+  background-image: url("https://image.jimcdn.com/app/cms/image/transf/dimension=origxorig:format=jpg/path/s7ffd8944362d0bf7/image/id48e7a1e20aae72e/version/1436428665/image.jpg");
+
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.login-button {
+  background-color: white;
+  //padding
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+
+
+
+}
+
+.titulo {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  color: white;
+}
+
+.new-list {
+  background-color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.input-radius {
+  border: 2px solid rgb(82, 86, 89);
+}
+
+.crear {
+  border: 2px solid rgb(82, 86, 89);
+  background-color: white;
+}
+
+.style-crear {
+  background-color: rgb(82, 86, 89) !important;
+  color: black;
+}
+
+#esconder-compra {
+  size:2em;
+  color: white;
+}
+
+.checkBox-style {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.redirigir{
+  width: 10%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 15em;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background-color: rgb(82, 86, 89);
+  //transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  float:right;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+
+  border-bottom: #7580ac;
+  border-right: #7580ac;
+
 }
