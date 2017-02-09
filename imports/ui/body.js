@@ -34,19 +34,19 @@ Template.body.helpers({
     return Tasks.find({ checked: { $ne: true } }).count(); //return del numero de tareas que hay en la base de datos
   },
   countFruteria () {
-    return Tasks.find({tipo: "Frutería"}).count();
+    return Tasks.find({$and: [{tipo: "Fruteria"}, { checked: { $ne: true } }]}).count();
   },
   countPanaderia () {
-    return Tasks.find({tipo: "Panaderia"}).count();
+    return Tasks.find({$and: [{tipo: "Panaderia"}, { checked: { $ne: true } }]}).count();
   },
   countSuper () {
-    return Tasks.find({tipo: "Súper"}).count();
+    return Tasks.find({$and: [{tipo: "Super"}, { checked: { $ne: true } }]}).count();
   },
   countCongelados () {
-    return Tasks.find({tipo: "Congelados"}).count();
+    return Tasks.find({$and: [{tipo: "Congelados"}, { checked: { $ne: true } }]}).count();
   },
   countOtros () {
-    return Tasks.find({tipo: "Otros"}).count();
+    return Tasks.find({$and: [{tipo: "Otros"}, { checked: { $ne: true } }]}).count();
   },
 });
 
