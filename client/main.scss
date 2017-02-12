@@ -111,11 +111,11 @@ ul {
 .delete {
   float: right;
   font-weight: bold;
+  margin-top: 0.2em;
   background: none;
-  font-size: 1em;
+  font-size: 2em;
   border: none;
   position: relative;
-
 }
 
 li {
@@ -195,27 +195,33 @@ header .hide-completed {
 }
 
 .todos {
-  background-color: #9c9c9c;
+  background-color: rgba(156, 156, 156, 0.60);
+  border: 5px solid #9c9c9c;
 }
 
 .super {
-  background-color: #ED2929;
+  background-color: rgba(254, 92, 6, 0.60);
+  border: 5px solid  #FE5C06;
 }
 
 .fruteria {
-  background-color: #90EE90;
+  background-color: rgba(28, 233, 188, 0.60);
+  border: 5px solid  #1CE9BC;
 }
 
 .panaderia {
-  background-color: #FBEC5D;
+  background-color: rgba(219, 164, 4, 0.60);
+  border: 5px solid  #DBA404;
 }
 
 .congelados {
-  background-color: #87CEEB;
+  background-color:  rgba(51, 162, 255, 0.60);
+  border: 5px solid   #33A2FF;
 }
 
 .otros {
-  background-color: #FFCC99;
+  background-color:rgba(147, 6, 6, 0.60);
+  border: 5px solid  #930606;
 }
 
 .select, .cantidadInput, .producto {
@@ -227,43 +233,37 @@ header .hide-completed {
 
 
 #Super {
-  background: #ED2939;
-  background-image: linear-gradient(to right, #ED2939, #DCD0FF 100%);
+  background-color: rgba(254, 92, 6, 0.60);
+  border: 5px solid  #FE5C06;
 }
 #Fruteria {
-  background: #90EE90;
-  background-image: linear-gradient(to right, #90EE90, #DCD0FF 100%);
+  background-color: rgba(28, 233, 188, 0.60);
+  border: 5px solid  #1CE9BC;
 
 }
 #Congelados {
-  background: #87CEEB;
-  background-image: linear-gradient(to right, #87CEEB, #DCD0FF 100%);
-
+  background-color:  rgba(51, 162, 255, 0.60);
+  border: 5px solid   #33A2FF;
 }
 #Panaderia {
-  background: #FBEC5D;
-  background-image: linear-gradient(to right, #FBEC5D, #DCD0FF 100%);
-
+  background-color: rgba(219, 164, 4, 0.60);
+  border: 5px solid  #DBA404;
 }
 #Otros {
-  background: #FFCC99;
-  background-image: linear-gradient(to right, #FFCC99, #DCD0FF 100%);
+  background-color:rgba(147, 6, 6, 0.60);
+  border: 5px solid  #930606;
 }
 
 .checked {
-  background: #C9C0BB !important;
-  background-image: linear-gradient(to right, #C9C0BB, #DCD0FF 100%) !important;
+  background-color: rgba(156, 156, 156, 0.60) !important;
+  border: 5px solid #9c9c9c !important;
 }
 
 .usrName {
   margin-right: 1rem;
 }
 
-.productoText {
-  margin-right: 3rem;
-  margin-left: 25%;
-  text-align: center;
-}
+
 
 .tipoText {
 
@@ -298,7 +298,7 @@ header .hide-completed {
 .titulo {
 
   padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   color: white;
 }
 
@@ -333,10 +333,10 @@ header .hide-completed {
 }
 
 .redirigir{
-  width: 10%;
+  width: 100%;
   display: inline-block;
   vertical-align: middle;
-
+  color: white;
   padding: 0.85em 1em;
   -webkit-appearance: none;
   border: 1px solid transparent;
@@ -355,8 +355,63 @@ header .hide-completed {
 }
 
 .styleList {
-  padding-top: 4rem;
+  //padding-top: 4rem;
   margin-top: 4rem;
   background-color: white;
 
+}
+
+
+.listas-compra{
+
+
+      /* display: inline-block; */
+      /* margin-right: 0 !important; */
+      vertical-align: middle;
+      width: 100%;
+      margin-bottom: 1em;
+      /* margin: 0 0 1rem 0; */
+      padding: 0.85em 1em;
+      -webkit-appearance: none;
+      border: 1px solid transparent;
+      border-radius: 0;
+      font-size: 0.9rem;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: #7580ac;
+      border-right: #7580ac;
+}
+
+.box {
+  background-color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: right;
+  border: 2px solid;
+  margin-right: 0.5em;
+  margin-top: 0em;
+}
+.toggle-checked {
+
+  height: 2em;
+  margin-top: 0.5em;
+  padding: 4em;
+  width: 2em;
+  margin-bottom: 0 !important;
+}
+
+.normal-text {
+  text-align: left;
+}
+.toggle-add, .toggle-delete {
+  margin-top: 1em;
+  size: 2em;
+}
+
+.number-kg-unidad {
+  text-align:center !important;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0.5em;
 }

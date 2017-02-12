@@ -1,34 +1,36 @@
 <template name="task" >
-  <li class="{{#if checked}}
-                checked
-              {{/if}}"  id ="{{tipo}}" draggable="true">
-    <button class="delete">&times;</button>
-    {{#if currentUser}}<!--Si el usuario no esta conectado no muestra el inout-->
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-    {{/if}}
-    <!--  {{#if isOwner}}
-        <button class="toggle-private">
-          {{#if private}}
-            Private
-          {{else}}
-            Public
-          {{/if}}
-        </button>
-      {{/if}} -->
+    <div class="row {{#if checked}}checked{{/if}} listas-compra"  id ="{{tipo}}" draggable="true">
 
-      <span class="usrName"><strong>{{username}}</strong></span>
-      <span class ="productoText">{{text}} </span>
-      <span class ="tipoText hide-for-small-only"> {{tipo}}</span>
-      <span class ="addOrDelet">
+        <div class="columns small-1 medium-1 large-1" style="margin-right: 2em;">
+          {{#if currentUser}}<!--Si el usuario no esta conectado no muestra el inout-->
+          <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+          {{/if}}
+        </div>
+        <div class="columns hide-for-small-only medium-2 large-2 box normal-text">
+            <span class="usrName style-text-list"><strong>{{username}}</strong></span>
+        </div>
+        <div class="columns hide-for-small-only medium-2 large-2 box normal-text">
+          <span class ="tipoText hide-for-small-only"> {{tipo}}</span>
+        </div>
+        <div class="columns small-5 medium-3 large-3 box normal-text">
+          <span class ="productoText">{{text}} </span>
+        </div>
+        <div class="columns  hide-for-small-only medium-1 large-1">
           {{#if currentUser}}
-        <button class='toggle-delete fi-minus '></button>
+          <button class='toggle-delete fi-minus '></button>
           {{/if}}
-          <span> {{number }} </span>
-            {{#if currentUser}}
-        <button class='toggle-add fi-plus'></button>
-            {{/if}}
-      </span>
+        </div>
+        <div class="columns small-2 medium-1 large-1 box number-kg-unidad ">
+            <span> {{number }} <strong>Kg</strong> </span>
+        </div>
+        <div class="columns  hide-for-small-only medium-1 large-1">
+          {{#if currentUser}}
+          <button class='toggle-add fi-plus'></button>
+          {{/if}}
+        </div>
+        <div class="columns small-1 medium-1 large-1" style="width: 1em;">
+            <button class="delete">&times;</button>
+        </div>
 
-
-    </li>
-  </template>
+    </div>
+</template>
