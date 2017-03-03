@@ -4,6 +4,18 @@ import { check } from 'meteor/check';
 
 export const Tasks = new Mongo.Collection('tasks');
 
+Router.route('/', {
+    name: 'home',
+    template: 'home'
+});
+Router.route('/lista', {
+    name: 'lista',
+    template: 'lista'
+});
+Router.configure({
+    layoutTemplate: 'main'
+});
+
 if (Meteor.isServer) {
   // This code only runs on the server
   // Only publish tasks that are public or belong to the current user
