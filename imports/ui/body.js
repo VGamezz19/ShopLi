@@ -8,28 +8,39 @@ import './task.js';
 import './body.html';
 
 
-Template.body.onCreated(function bodyOnCreated() {
+
+//lista
+//____________________________________________________________
+Template.lista.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe('tasks');
 });
 
-Template.body.helpers({
+Template.lista.helpers({
   tasks() {
-
-    //console.log(Meteor.userId());
     const instance = Template.instance();
+    console.log(instance.state);
+    console.log(instance.state.get('hideCompleted'));
     if (instance.state.get('hideCompleted')) {
       // If hide completed is checked, filter tasks
       return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
-    /*if (!Meteor.userId()) {
-      // If hide completed is checked, filter tasks
-      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
-    } */
-
-    // Otherwise, return all of the tasks
     return Tasks.find({}, { sort: { createdAt: -1 } });
   },
+});
+Template.lista.events({
+  'change .hide-completed input'(event, instance) {
+    instance.state.set('hideCompleted', event.target.checked);
+  },
+});
+
+//home
+//____________________________________________________________
+Template.home.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('tasks');
+});
+Template.home.helpers({
   incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count(); //return del numero de tareas que hay en la base de datos
   },
@@ -50,7 +61,7 @@ Template.body.helpers({
   },
 });
 
-Template.body.events({  //insercion de datos en Mongo.
+Template.home.events({  //insercion de datos en Mongo.
   'submit .new-list'(event) {
     // Prevent default browser form submit
     event.preventDefault();
@@ -66,9 +77,5 @@ Template.body.events({  //insercion de datos en Mongo.
   // Clear form
   target.producto.value = '';
   target.cantidad.value = '';
-},
-
-'change .hide-completed input'(event, instance) {
-  instance.state.set('hideCompleted', event.target.checked);
 },
 });

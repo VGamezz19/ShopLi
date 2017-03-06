@@ -1,5 +1,5 @@
 
-<template name="home">
+<template name ="headerHome">
   <header class = "header-init">
 
   </header>
@@ -15,12 +15,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="columns small-1 large-1 medium-1 small-offset-11 large-offset-11 medium-offset-11">
-            <a href="#init" class="redirigir fi-arrow-down"></a>
+          {{#if currentUser}}
+          <div class="columns small-4 large-1 medium-2 small-offset-8 large-offset-11 medium-offset-10">
+            <a href="/lista" class="redirigir fi-arrow-down"></a>
           </div>
+          {{/if}}
         </div>
       </div>
+</template>
 
+<template name="home">
+  {{>headerHome}}
     <form class="new-list">
       <div class="row">
         <div class = "columns small-10 medium-10 large-10">
@@ -72,8 +77,10 @@
           <div class="columns small-4 medium-4 large-4">
               <label for="exampleFileUpload" class="todos">Todos {{incompleteCount}}</label>
           </div>
-          <div class="columns small-4 medium-4 large-4">
+          <div class="columns small-4 medium-4 large-4" >
+            <a href="/lista/Super">
               <label for="exampleFileUpload" class="super">Súper {{countSuper}}</label>
+            </a>
           </div>
           <div class="columns small-4 medium-4 large-4">
                 <label for="exampleFileUpload" class="congelados">Congelados {{countCongelados}}</label>
@@ -117,20 +124,33 @@
       </div>
     </div>
     {{/if}}
+
+  </template>
+
+  <template name ="lista">
+
+      <div class="login-button">
+        {{> loginButtons}}
+      </div>
+    {{> sAlert}}
     <div class="esconderLista">
       <div class="row">
         <div class="columns small-12 medium-12 large-12 text-center">
           <label class="hide-completed">
             <input class="checkBox-style" type="checkbox" /> <b id="esconder-compra">Esconder compras realizadas</b>
-          </label>
+            </label>
+          </div>
+
         </div>
+        <div class="row">
 
-      </div>
+          <div class="columns small-4 large-1 medium-2 small-offset-8 large-offset-11 medium-offset-10">
+            <a href="/" class="redirigir fi-arrow-up"></a>
+          </div>
+
+        </div>
     </div>
-  </template>
-
-  <template name ="lista">
-    <div class = "styleList"> <!--bucle -->
+    <div class = "styleList">
       {{#each tasks}}
         {{> task}}
       {{/each}}
@@ -139,6 +159,7 @@
 
   <template name="main">
     <body>
+
       {{> yield}}
       <hr />
       <p>Copyright &copy; Andrea Casadevall & Victor Gamez, 2017.</p>

@@ -15,6 +15,16 @@ Router.route('/lista', {
 Router.configure({
     layoutTemplate: 'main'
 });
+Router.route('/lista/:_id', {
+    template: 'lista',
+    data: function(){
+        var currentList = this.params._id;
+        console.log(this.params);
+      //  return Tasks.findOne({ tipo: currentList });
+        return Tasks.find({tipo:currentList}, { sort: { createdAt: -1 } });
+    }
+});
+
 
 if (Meteor.isServer) {
   // This code only runs on the server
