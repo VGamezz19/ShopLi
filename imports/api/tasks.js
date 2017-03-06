@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
-
+import { ReactiveDict } from 'meteor/reactive-dict';
 export const Tasks = new Mongo.Collection('tasks');
 
 Router.route('/', {
@@ -16,12 +16,40 @@ Router.configure({
     layoutTemplate: 'main'
 });
 Router.route('/lista/:_id', {
-    template: 'lista',
+    template: 'listaPage',
     data: function(){
-        var currentList = this.params._id;
-        console.log(this.params);
-      //  return Tasks.findOne({ tipo: currentList });
-        return Tasks.find({tipo:currentList}, { sort: { createdAt: -1 } });
+    var currentList = this.params._id;
+
+    Template.listaPage.onCreated(function bodyOnCreated() {
+      this.state = new ReactiveDict();
+      Meteor.subscribe('tasks');
+    })
+
+    Template.listaPage.helpers({
+      tasksList() {
+        const instance = Template.instance();
+
+        if (instance.state.get('hideCompleted')) {
+          return Tasks.find({$and: [{tipo:currentList}, {checked: { $ne: true }}]}, { sort: { createdAt: -1 } });
+        } else {
+
+          return Tasks.find({tipo:currentList}, { sort: { createdAt: -1 } });
+        }
+      //  console.log(Tasks.find({}, { sort: { createdAt: -1 } }));
+
+      },
+      tipoProducto () {
+        console.log(Tasks.find({tipo:currentList}, {"_id":0, "text":0, "number":0, "tipo":1, "createdAt":0, "owner":0, "user":0, "checked":0}));
+        return Tasks.find({tipo:currentList}, {"_id":0, "text":0, "number":0, "tipo":1, "createdAt":0, "owner":0, "user":0, "checked":0});
+      },
+    })
+
+    Template.listaPage.events({
+      'change .hide-completed input'(event, instance) {
+        instance.state.set('hideCompleted', event.target.checked);
+      },
+    })
+
     }
 });
 

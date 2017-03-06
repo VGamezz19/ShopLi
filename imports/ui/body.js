@@ -19,12 +19,14 @@ Template.lista.onCreated(function bodyOnCreated() {
 Template.lista.helpers({
   tasks() {
     const instance = Template.instance();
-    console.log(instance.state);
-    console.log(instance.state.get('hideCompleted'));
+
+  //  console.log(instance.state);
+  //  console.log(instance.state.get('hideCompleted'));
     if (instance.state.get('hideCompleted')) {
       // If hide completed is checked, filter tasks
       return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
+    console.log(Tasks.find({}, { sort: { createdAt: -1 } }));
     return Tasks.find({}, { sort: { createdAt: -1 } });
   },
 });
