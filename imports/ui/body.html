@@ -26,29 +26,30 @@
 
 <template name="home">
   {{>headerHome}}
+  {{#if currentUser}}
     <form class="new-list">
       <div class="row">
-        <div class = "columns small-10 medium-10 large-10">
+        <div class = "columns small-9 medium-10 large-10">
           <div class="input-group">
             <input type="text" name="producto" placeholder="Introduce producto" class ="producto input-radius"/>
           </div>
         </div>
-        <div class="columns small-2 medium-2 large-2">
+        <div class="columns small-3 medium-2 large-2">
 
-            <span class ="buton crear">Text</span>
+            <span class ="buton crear fi-shopping-cart"></span>
 
         </div>
       </div>
       <div class="row">
-        <div class = "columns small-8 medium-8 large-8">
+        <div class = "columns small-6 medium-8 large-8">
           <div class="input-group">
             <input type = "number" name="cantidad" placeholder="Introduce cantidad" class ="cantidadInput input-radius" />
           </div>
         </div>
-        <div class = "columns small-2 medium-2 large-2">
+        <div class = "columns small-3 medium-2 large-2">
           <span class ="buton crear">Kg</span>
         </div>
-        <div class = "columns small-2 medium-2 large-2">
+        <div class = "columns small-3 medium-2 large-2">
           <span class ="buton crear">Uni</span>
         </div>
       </div>
@@ -66,75 +67,91 @@
         </div>
       </div>
       <div class="row">
-        <div class="columns small-2 medium-2 large-2">
+        <div class="columns small-12 medium-6 large-2">
           <input type="submit" value ="CREAR" name="submit" class =" button crear style-crear" />
         </div>
       </div>
     </form>
-      {{#if currentUser}} <!-- si el usuario esta conectado-->
-      <div style="background-color: white; padding-bottom: 2rem;">
-        <div class="row" >
-          <div class="columns small-4 medium-4 large-4">
-            <a href="/lista">
-              <label for="exampleFileUpload" class="todos">Todos {{incompleteCount}}</label>
-            </a>
-          </div>
-          <div class="columns small-4 medium-4 large-4" >
-            <a href="/lista/Super">
-              <label for="exampleFileUpload" class="super">Súper {{countSuper}}</label>
-            </a>
-          </div>
-          <div class="columns small-4 medium-4 large-4">
-            <a href="/lista/Congelados">
-                <label for="exampleFileUpload" class="congelados">Congelados {{countCongelados}}</label>
-            </a>
+
+  {{else}}
+
+    <form class="new-list">
+      <div class="row">
+        <div class = "columns small-9 medium-10 large-10">
+          <div class="input-group">
+            <input type="text" readonly="readonly" name="producto" placeholder="Inicia sesión " class ="producto input-radius"/>
           </div>
         </div>
-        <div class="row" style="background-color: white;">
-          <div class="columns small-4 medium-4 large-4">
-            <a href="/lista/Fruteria">
-              <label for="exampleFileUpload" class="fruteria">Frutería {{countFruteria}}</label>
-            </a>
+        <div class="columns small-3 medium-2 large-2">
+
+            <span class ="buton crear fi-shopping-cart"></span>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class = "columns small-6 medium-8 large-8">
+          <div class="input-group">
+            <input type = "number" readonly="readonly" name="cantidad" placeholder="Inicia sesión" class ="cantidadInput input-radius" />
           </div>
-          <div class="columns small-4 medium-4 large-4">
-            <a href="/lista/Panaderia">
-              <label for="exampleFileUpload" class="panaderia">Panaderia {{countPanaderia}}</label>
-            </a>
-          </div>
-          <div class="columns small-4 medium-4 large-4">
-            <a href="/lista/Otros">
-              <label for="exampleFileUpload" class="otros">Otros {{countOtros}}</label>
-            </a>
+        </div>
+        <div class = "columns small-3 medium-2 large-2">
+          <span class ="buton crear">Kg</span>
+        </div>
+        <div class = "columns small-3 medium-2 large-2">
+          <span class ="buton crear">Uni</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns small-12 medium-12 large-12">
+          <div class="input-group">
+            <select name="tipo" class = "select input-radius">
+              <option value="Super">---</option>
+            </select>
           </div>
         </div>
       </div>
-    {{else}}
-    <div style="background-color: white; padding-bottom: 2rem;">
-      <div class="row" >
-        <div class="columns small-4 medium-4 large-4">
-            <label for="exampleFileUpload" class="todos">Todos </label>
-        </div>
-        <div class="columns small-4 medium-4 large-4">
-            <label for="exampleFileUpload" class="super">Súper </label>
-        </div>
-        <div class="columns small-4 medium-4 large-4">
-              <label for="exampleFileUpload" class="congelados">Congelados </label>
+      <div class="row">
+        <div class="columns small-12 medium-6 large-2">
+          <input type="submit" value ="CREAR" name="" class =" button crear style-crear" />
         </div>
       </div>
-      <div class="row" style="background-color: white;">
-        <div class="columns small-4 medium-4 large-4">
-          <label for="exampleFileUpload" class="fruteria">Frutería </label>
-        </div>
-        <div class="columns small-4 medium-4 large-4">
-            <label for="exampleFileUpload" class="panaderia">Panaderia </label>
-        </div>
-        <div class="columns small-4 medium-4 large-4">
-            <label for="exampleFileUpload" class="otros">Otros </label>
-        </div>
-      </div>
-    </div>
+    </form>
     {{/if}}
 
+      <div style="background-color: white; padding-bottom: 2rem;">
+        <div class="row" >
+          <div class="columns small-6 medium-4 large-4">
+            <a href="/lista">
+              <label for="exampleFileUpload" class="todos">Todos {{#if currentUser}}{{incompleteCount}}{{/if}}</label>
+            </a>
+          </div>
+          <div class="columns small-6 medium-4 large-4" >
+            <a href="/lista/Super">
+              <label for="exampleFileUpload" class="super">Súper {{#if currentUser}}{{countSuper}}{{/if}}</label>
+            </a>
+          </div>
+          <div class="columns small-6 medium-4 large-4">
+            <a href="/lista/Congelados">
+                <label for="exampleFileUpload" class="congelados">Congel. {{#if currentUser}}{{countCongelados}}{{/if}}</label>
+            </a>
+          </div>
+          <div class="columns small-6 medium-4 large-4">
+            <a href="/lista/Fruteria">
+              <label for="exampleFileUpload" class="fruteria">Frutería {{#if currentUser}}{{countFruteria}}{{/if}}</label>
+            </a>
+          </div>
+          <div class="columns small-6 medium-4 large-4">
+            <a href="/lista/Panaderia">
+              <label for="exampleFileUpload" class="panaderia">Panade. {{#if currentUser}}{{countPanaderia}}{{/if}}</label>
+            </a>
+          </div>
+          <div class="columns small-6 medium-4 large-4">
+            <a href="/lista/Otros">
+              <label for="exampleFileUpload" class="otros">Otros {{#if currentUser}}{{countOtros}}{{/if}}</label>
+            </a>
+          </div>
+        </div>
+      </div>
   </template>
 
   <template name ="lista">
@@ -154,7 +171,7 @@
         </div>
         <div class="row">
 
-          <div class="columns small-4 large-1 medium-2 small-offset-8 large-offset-11 medium-offset-10">
+          <div class="columns small-4 large-1 medium-2 small-offset-8 large-offset-11 medium-offset-10" style =" margin-bottom: 1em;">
             <a href="/" class="redirigir fi-arrow-up"></a>
           </div>
 
@@ -166,23 +183,29 @@
       {{/each}}
     </div>
   </template>
+
   <template name="listaPage">
     <div class="login-button">
       {{> loginButtons}}
     </div>
   {{> sAlert}}
   <div class="esconderLista">
+    <div class ="row">
+      <div class ="columns small-12 medium-12 large-12 text-center">
+        <h1 class ="tituloListPage"> {{tipoProducto}}</h1>
+      </div>
+    </div>
     <div class="row">
       <div class="columns small-12 medium-12 large-12 text-center">
         <label class="hide-completed">
-          <input class="checkBox-style" type="checkbox" /> <b id="esconder-compra">---</b>
+          <input class="checkBox-style hidenCheckbox" type="checkbox" /> <b id="esconder-compra">Esconder compras realizadas</b>
           </label>
         </div>
 
       </div>
       <div class="row">
 
-        <div class="columns small-4 large-1 medium-2 small-offset-8 large-offset-11 medium-offset-10">
+        <div class="columns small-4 large-1 medium-2 small-offset-8 large-offset-11 medium-offset-10" style ="margin-bottom: 1em;">
           <a href="/" class="redirigir fi-arrow-up"></a>
         </div>
 
@@ -199,8 +222,8 @@
     <body>
 
       {{> yield}}
-      <hr />
-      <p>Copyright &copy; Andrea Casadevall & Victor Gamez, 2017.</p>
+      <hr style = "margin-top: 3.5em" />
+      <p class ="text-center">Copyright &copy; Andrea Casadevall & Victor Gamez, 2017.</p>
     </body>
   </template>
 

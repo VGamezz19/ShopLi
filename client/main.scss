@@ -111,7 +111,7 @@ ul {
 .delete {
   float: right;
   font-weight: bold;
-  margin-top: 0.2em;
+
   background: none;
   font-size: 2em;
   border: none;
@@ -304,8 +304,8 @@ header .hide-completed {
 
 .new-list {
   background-color: white;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .input-radius {
@@ -356,48 +356,47 @@ header .hide-completed {
 
 .styleList {
   //padding-top: 4rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
   background-color: white;
 
 }
 
 
 .listas-compra{
-
-
-      /* display: inline-block; */
-      /* margin-right: 0 !important; */
-      vertical-align: middle;
-      width: 100%;
-      margin-bottom: 1em;
-      /* margin: 0 0 1rem 0; */
-      padding: 0.85em 1em;
-      -webkit-appearance: none;
-      border: 1px solid transparent;
-      border-radius: 0;
-      font-size: 0.9rem;
-      line-height: 1;
-      text-align: center;
-      cursor: pointer;
-      border-bottom: #7580ac;
-      border-right: #7580ac;
+  /* display: inline-block; */
+  /* margin-right: 0 !important; */
+  vertical-align: middle;
+  /* width: 100%; */
+  margin-bottom: 1em;
+  /* margin: 0 0 1rem 0; */
+  padding: 0.85em 1em;
+  padding-right: 0;
+  padding-left: 0;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  /* border-radius: 0; */
+  /* font-size: 0.9rem; */
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: #7580ac;
+  border-right: #7580ac;
 }
 
 .box {
   background-color: white;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  text-align: right;
-  border: 2px solid;
-  margin-right: 0.5em;
-  margin-top: 0em;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      text-align: right;
+      border: 2px solid;
+      margin-right: 0.5em;
+      margin-top: 0em;
 }
 .toggle-checked {
-
-  height: 2em;
-  margin-top: 0.5em;
-  padding: 4em;
-  width: 2em;
+  /* height: 2em; */
+  margin-top: 0.7em;
   margin-bottom: 0 !important;
 }
 
@@ -414,4 +413,15 @@ header .hide-completed {
   padding-left: 0;
   padding-right: 0;
   margin-right: 0.5em;
+}
+
+.hidenCheckbox {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.tituloListPage {
+  margin-top: 0.5em;
+  color: white;
+  margin-right: 0em;
 }

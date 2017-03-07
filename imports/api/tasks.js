@@ -39,8 +39,7 @@ Router.route('/lista/:_id', {
 
       },
       tipoProducto () {
-        console.log(Tasks.find({tipo:currentList}, {"_id":0, "text":0, "number":0, "tipo":1, "createdAt":0, "owner":0, "user":0, "checked":0}));
-        return Tasks.find({tipo:currentList}, {"_id":0, "text":0, "number":0, "tipo":1, "createdAt":0, "owner":0, "user":0, "checked":0});
+        return currentList;
       },
     })
 

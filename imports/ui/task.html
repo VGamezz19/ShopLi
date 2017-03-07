@@ -1,8 +1,8 @@
 <template name="task" >
 
     <div class="row {{#if checked}}checked{{/if}} listas-compra"  id ="{{tipo}}" draggable="true">
-
-        <div class="columns small-1 medium-1 large-1" style="margin-right: 2em;">
+      <div class =" columns small-12 medium-12 large-12">
+        <div class="columns small-1 medium-1 large-1" style="margin-right: 1em;">
           {{#if currentUser}}<!--Si el usuario no esta conectado no muestra el inout-->
           <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
           {{/if}}
@@ -32,6 +32,6 @@
         <div class="columns small-1 medium-1 large-1" style="width: 1em;">
             <button class="delete">&times;</button>
         </div>
-
+      </div>
     </div>
 </template>
