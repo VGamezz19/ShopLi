@@ -7,13 +7,13 @@ this project it is prototype of shopping list online
 I tried to show my knowledge with `Meteor`. I share my code to the people who wants to learn, compare and consult my code.
 
 ```
-If you see any error, please add comment in code
+If you see any error, please add comment in the code
 ```
 ### bookstores and framework that I use in the project
 
 I have used Meteor v1.4 with Blaze and Foundation.
 
-For add Foundation in Meteor project can be done with two steps (if you use scss):
+To add Foundation in Meteor project can be done with two steps (if you use scss):
 
 * insert this command in your terminal  `meteor add zurb:foundation-sites`
 
@@ -21,13 +21,26 @@ after throw the last command, We add in our main.scss foundation import:
 
 * `@import '{zurb:foundation-sites}/scss/foundation';`
 
-For add scss in your project you only change the extension `.css ` for `.scss`
+To add scss in your project you only change the extension `.css ` for `.scss`
 
 ## packages of the project
 
-I used the package `iron:router` to do a simple routing with parameters
-* insert package with this command `meteor add iron:router`
-![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/Captura%20de%20pantalla%202017-03-08%20a%20las%2018.34.18.png)
+The first package that I have use  is `iron:router` to do a simple routing with parameters (in imports > api > tasks.js)
+* insert the package with this command `meteor add iron:router`
+
+![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/routExemple.png)
+
+The second package that I have use is `sAlert`. This package implement the typical Alert JavaScrip with style and movement
+* insert the package with this command `meteor add juliancwirko:s-alert`
+
+Examples of use with the sAlert:
+
+![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/sAlertCode.png)
+
+* You can see the Alert with this html code
+
+![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/sAlertHtml.png)
+
 
 ### Prerequisites
 
