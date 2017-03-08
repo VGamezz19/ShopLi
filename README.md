@@ -46,6 +46,6 @@ Examples of use with the sAlert:
 
 Thats its the finality of my project
 
-![Demo CountPages alpha](http://www.giphy.com/gifs/l0IynYlR55rCI0iPu)
+![](https://github.com/VGamezz19/shop-list/blob/style/img/gifPage.gif)
 
 ## Demo Phone project page
