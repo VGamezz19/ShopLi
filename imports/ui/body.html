@@ -1,9 +1,19 @@
 
+<!--Main Template-->
+<template name="main">
+  <body>
+
+    {{> yield}}
+    <hr style = "margin-top: 3.5em" />
+    <p class ="text-center">Copyright &copy; Andrea Casadevall & Victor Gamez, 2017.</p>
+  </body>
+</template>
+
+<!--Header templates-->
 <template name ="headerHome">
   <header class = "header-init">
 
   </header>
-
       <div class="login-button">
         {{> loginButtons}}
       </div>
@@ -24,137 +34,139 @@
       </div>
 </template>
 
+<!--Home template-->
 <template name="home">
   {{>headerHome}}
   {{#if currentUser}}
-    <form class="new-list">
-      <div class="row">
-        <div class = "columns small-9 medium-10 large-10">
-          <div class="input-group">
-            <input type="text" name="producto" placeholder="Introduce producto" class ="producto input-radius"/>
-          </div>
+  <form class="new-list">
+    <div class="row">
+      <div class = "columns small-9 medium-10 large-10">
+        <div class="input-group">
+          <input type="text" name="producto" placeholder="Introduce producto" class ="producto input-radius"/>
         </div>
-        <div class="columns small-3 medium-2 large-2">
+      </div>
+      <div class="columns small-3 medium-2 large-2">
 
-            <span class ="buton crear fi-shopping-cart"></span>
+          <span class ="buton crear fi-shopping-cart"></span>
 
+      </div>
+    </div>
+    <div class="row">
+      <div class = "columns small-6 medium-8 large-8">
+        <div class="input-group">
+          <input type = "number" name="cantidad" placeholder="Introduce cantidad" class ="cantidadInput input-radius" />
         </div>
       </div>
-      <div class="row">
-        <div class = "columns small-6 medium-8 large-8">
-          <div class="input-group">
-            <input type = "number" name="cantidad" placeholder="Introduce cantidad" class ="cantidadInput input-radius" />
-          </div>
-        </div>
-        <div class = "columns small-3 medium-2 large-2">
-          <span class ="buton crear">Kg</span>
-        </div>
-        <div class = "columns small-3 medium-2 large-2">
-          <span class ="buton crear">Uni</span>
+      <div class = "columns small-3 medium-2 large-2">
+        <span class ="buton crear">Kg</span>
+      </div>
+      <div class = "columns small-3 medium-2 large-2">
+        <span class ="buton crear">Uni</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 medium-12 large-12">
+        <div class="input-group">
+          <select name="tipo" class = "select input-radius">
+            <option value="Super">Súper</option>
+            <option value="Congelados">Congelados</option>
+            <option value="Fruteria">Frutería</option>
+            <option value="Panaderia">Panaderia</option>
+            <option value="Otros">Otros</option>
+          </select>
         </div>
       </div>
-      <div class="row">
-        <div class="columns small-12 medium-12 large-12">
-          <div class="input-group">
-            <select name="tipo" class = "select input-radius">
-              <option value="Super">Súper</option>
-              <option value="Congelados">Congelados</option>
-              <option value="Fruteria">Frutería</option>
-              <option value="Panaderia">Panaderia</option>
-              <option value="Otros">Otros</option>
-            </select>
-          </div>
-        </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 medium-6 large-2">
+        <input type="submit" value ="CREAR" name="submit" class =" button crear style-crear" />
       </div>
-      <div class="row">
-        <div class="columns small-12 medium-6 large-2">
-          <input type="submit" value ="CREAR" name="submit" class =" button crear style-crear" />
-        </div>
-      </div>
-    </form>
+    </div>
+  </form>
 
   {{else}}
 
-    <form class="new-list">
-      <div class="row">
-        <div class = "columns small-9 medium-10 large-10">
-          <div class="input-group">
-            <input type="text" readonly="readonly" name="producto" placeholder="Inicia sesión " class ="producto input-radius"/>
-          </div>
+  <form class="new-list">
+    <div class="row">
+      <div class = "columns small-9 medium-10 large-10">
+        <div class="input-group">
+          <input type="text" readonly="readonly" name="producto" placeholder="Inicia sesión " class ="producto input-radius"/>
         </div>
-        <div class="columns small-3 medium-2 large-2">
+      </div>
+      <div class="columns small-3 medium-2 large-2">
 
-            <span class ="buton crear fi-shopping-cart"></span>
+          <span class ="buton crear fi-shopping-cart"></span>
 
+      </div>
+    </div>
+    <div class="row">
+      <div class = "columns small-6 medium-8 large-8">
+        <div class="input-group">
+          <input type = "number" readonly="readonly" name="cantidad" placeholder="Inicia sesión" class ="cantidadInput input-radius" />
         </div>
       </div>
-      <div class="row">
-        <div class = "columns small-6 medium-8 large-8">
-          <div class="input-group">
-            <input type = "number" readonly="readonly" name="cantidad" placeholder="Inicia sesión" class ="cantidadInput input-radius" />
-          </div>
-        </div>
-        <div class = "columns small-3 medium-2 large-2">
-          <span class ="buton crear">Kg</span>
-        </div>
-        <div class = "columns small-3 medium-2 large-2">
-          <span class ="buton crear">Uni</span>
+      <div class = "columns small-3 medium-2 large-2">
+        <span class ="buton crear">Kg</span>
+      </div>
+      <div class = "columns small-3 medium-2 large-2">
+        <span class ="buton crear">Uni</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 medium-12 large-12">
+        <div class="input-group">
+          <select name="tipo" class = "select input-radius">
+            <option value="Super">---</option>
+          </select>
         </div>
       </div>
-      <div class="row">
-        <div class="columns small-12 medium-12 large-12">
-          <div class="input-group">
-            <select name="tipo" class = "select input-radius">
-              <option value="Super">---</option>
-            </select>
-          </div>
-        </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 medium-6 large-2">
+        <input type="submit" value ="CREAR" name="" class =" button crear style-crear" />
       </div>
-      <div class="row">
-        <div class="columns small-12 medium-6 large-2">
-          <input type="submit" value ="CREAR" name="" class =" button crear style-crear" />
-        </div>
-      </div>
-    </form>
-    {{/if}}
+    </div>
+  </form>
+  {{/if}}
 
-      <div style="background-color: white; padding-bottom: 2rem;">
-        <div class="row" >
-          <div class="columns small-6 medium-4 large-4">
-            <a href="/lista">
-              <label for="exampleFileUpload" class="todos">Todos {{#if currentUser}}{{incompleteCount}}{{/if}}</label>
-            </a>
-          </div>
-          <div class="columns small-6 medium-4 large-4" >
-            <a href="/lista/Super">
-              <label for="exampleFileUpload" class="super">Súper {{#if currentUser}}{{countSuper}}{{/if}}</label>
-            </a>
-          </div>
-          <div class="columns small-6 medium-4 large-4">
-            <a href="/lista/Congelados">
-                <label for="exampleFileUpload" class="congelados">Congel. {{#if currentUser}}{{countCongelados}}{{/if}}</label>
-            </a>
-          </div>
-          <div class="columns small-6 medium-4 large-4">
-            <a href="/lista/Fruteria">
-              <label for="exampleFileUpload" class="fruteria">Frutería {{#if currentUser}}{{countFruteria}}{{/if}}</label>
-            </a>
-          </div>
-          <div class="columns small-6 medium-4 large-4">
-            <a href="/lista/Panaderia">
-              <label for="exampleFileUpload" class="panaderia">Panade. {{#if currentUser}}{{countPanaderia}}{{/if}}</label>
-            </a>
-          </div>
-          <div class="columns small-6 medium-4 large-4">
-            <a href="/lista/Otros">
-              <label for="exampleFileUpload" class="otros">Otros {{#if currentUser}}{{countOtros}}{{/if}}</label>
-            </a>
-          </div>
+    <div style="background-color: white; padding-bottom: 2rem;">
+      <div class="row" >
+        <div class="columns small-6 medium-4 large-4">
+          <a href="/lista">
+            <label for="exampleFileUpload" class="todos">Todos {{#if currentUser}}{{incompleteCount}}{{/if}}</label>
+          </a>
+        </div>
+        <div class="columns small-6 medium-4 large-4" >
+          <a href="/lista/Super">
+            <label for="exampleFileUpload" class="super">Súper {{#if currentUser}}{{countSuper}}{{/if}}</label>
+          </a>
+        </div>
+        <div class="columns small-6 medium-4 large-4">
+          <a href="/lista/Congelados">
+              <label for="exampleFileUpload" class="congelados">Congel. {{#if currentUser}}{{countCongelados}}{{/if}}</label>
+          </a>
+        </div>
+        <div class="columns small-6 medium-4 large-4">
+          <a href="/lista/Fruteria">
+            <label for="exampleFileUpload" class="fruteria">Frutería {{#if currentUser}}{{countFruteria}}{{/if}}</label>
+          </a>
+        </div>
+        <div class="columns small-6 medium-4 large-4">
+          <a href="/lista/Panaderia">
+            <label for="exampleFileUpload" class="panaderia">Panade. {{#if currentUser}}{{countPanaderia}}{{/if}}</label>
+          </a>
+        </div>
+        <div class="columns small-6 medium-4 large-4">
+          <a href="/lista/Otros">
+            <label for="exampleFileUpload" class="otros">Otros {{#if currentUser}}{{countOtros}}{{/if}}</label>
+          </a>
         </div>
       </div>
-  </template>
+    </div>
+</template>
 
-  <template name ="lista">
+<!--List Template-->
+<template name ="lista">
 
       <div class="login-button">
         {{> loginButtons}}
@@ -184,12 +196,13 @@
     </div>
   </template>
 
-  <template name="listaPage">
+<!--List Template with params-->
+<template name="listaPage">
     <div class="login-button">
       {{> loginButtons}}
     </div>
-  {{> sAlert}}
-  <div class="esconderLista">
+    {{> sAlert}}
+    <div class="esconderLista">
     <div class ="row">
       <div class ="columns small-12 medium-12 large-12 text-center">
         <h1 class ="tituloListPage"> {{tipoProducto}}</h1>
@@ -210,28 +223,10 @@
         </div>
 
       </div>
-  </div>
-  <div class = "styleList">
+    </div>
+    <div class = "styleList">
     {{#each tasksList}}
       {{> task}}
     {{/each}}
-  </div>
-  </template>
-
-  <template name="main">
-    <body>
-
-      {{> yield}}
-      <hr style = "margin-top: 3.5em" />
-      <p class ="text-center">Copyright &copy; Andrea Casadevall & Victor Gamez, 2017.</p>
-    </body>
-  </template>
-
-
-
-
-
-
-<!-- <template name="task">
-  <li>{{text}}</li>
-</template> -->
+    </div>
+</template>

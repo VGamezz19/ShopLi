@@ -9,7 +9,7 @@ import './body.html';
 
 
 
-//lista
+//Events/Helpers/ for template Lista
 //____________________________________________________________
 Template.lista.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
@@ -36,7 +36,7 @@ Template.lista.events({
   },
 });
 
-//home
+//Events/Helpers for template Home
 //____________________________________________________________
 Template.home.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
