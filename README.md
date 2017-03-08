@@ -27,6 +27,7 @@ For add scss in your project you only change the extension `.css ` for `.scss`
 
 I used the package `iron:router` to do a simple routing with parameters
 * insert package with this command `meteor add iron:router`
+![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/Captura%20de%20pantalla%202017-03-08%20a%20las%2018.34.18.png)
 
 ### Prerequisites
 
