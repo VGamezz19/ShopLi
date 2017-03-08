@@ -42,8 +42,10 @@ Examples of use with the sAlert:
 ![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/sAlertHtml.png)
 
 
-### Demo PC project page
+## Demo PC project page
 
-thats its the finality of my project
+Thats its the finality of my project
 
-![Demo CountPages alpha](https://github.com/VGamezz19/shop-list/blob/style/img/testGifPage.mov)
+![Demo CountPages alpha](http://www.giphy.com/gifs/l0IynYlR55rCI0iPu)
+
+## Demo Phone project page
