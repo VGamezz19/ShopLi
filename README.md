@@ -49,3 +49,7 @@ Thats its the finality of my project
 ![](https://github.com/VGamezz19/shop-list/blob/style/img/gifPage.gif)
 
 ## Demo Phone project page
+
+Finally I wanted to show you the project in phone format
+
+![](https://github.com/VGamezz19/shop-list/blob/style/img/gifPhonePage.gif)
