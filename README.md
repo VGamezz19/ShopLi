@@ -28,28 +28,28 @@ To add scss in your project you only change the extension `.css ` for `.scss`
 The first package that I have use  is `iron:router` to do a simple routing with parameters (in imports > api > tasks.js)
 * insert the package with this command `meteor add iron:router`
 
-![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/routExemple.png)
+![alt tag](https://github.com/VGamezz19/shop-list/blob/master/img/routExemple.png)
 
 The second package that I have use is `sAlert`. This package implement the typical Alert JavaScrip with style and movement
 * insert the package with this command `meteor add juliancwirko:s-alert`
 
 Examples of use with the sAlert:
 
-![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/sAlertCode.png)
+![alt tag](https://github.com/VGamezz19/shop-list/blob/master/img/sAlertCode.png)
 
 * You can see the Alert with this html code
 
-![alt tag](https://github.com/VGamezz19/shop-list/blob/style/img/sAlertHtml.png)
+![alt tag](https://github.com/VGamezz19/shop-list/blob/master/img/sAlertHtml.png)
 
 
 ## Demo PC project page
 
 Thats its the finality of my project
 
-![](https://github.com/VGamezz19/shop-list/blob/style/img/gifPage.gif)
+![](https://github.com/VGamezz19/shop-list/blob/master/img/gifPage.gif)
 
 ## Demo Phone project page
 
 Finally I wanted to show you the project in phone format
 
-![](https://github.com/VGamezz19/shop-list/blob/style/img/gifPhonePage.gif)
+![](https://github.com/VGamezz19/shop-list/blob/master/img/gifPhonePage.gif)
